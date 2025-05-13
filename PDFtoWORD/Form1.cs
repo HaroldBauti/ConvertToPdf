@@ -15,81 +15,82 @@ namespace PDFtoWORD
 {
     public partial class Form1 : Form
     {
-        private FolderBrowserDialog CarpetaSalida;
+        private FolderBrowserDialog _destinationFolder;
 
-        private bool convertir = false;
+        private bool _convert = false;
 
-        private string RutaArchivoOrigen;
+        private string _fileOriginPath;
 
-        private string NombreArchivoOrigen;
+        private string _fileOriginName;
 
-        private string RutaArchivoDestino;
+        private string _fileDestinationPath;
 
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void iconButton3_Click(object sender, EventArgs e)
+        private void BtnExitProgram(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void iconButton2_Click(object sender, EventArgs e)
+        private void BtnMinimizeWindow(object sender, EventArgs e)
         {
-            if (this.WindowState==FormWindowState.Normal)
+            if (this.WindowState == FormWindowState.Normal)
             {
                 this.WindowState = FormWindowState.Minimized;
             }
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void BtnSearchClick(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Archivo PDF(.pdf)|*.pdf";
+            openFileDialog.Filter = "Archive PDF(.pdf)|*.pdf";
             DialogResult dialogResult = openFileDialog.ShowDialog();
             if (dialogResult == DialogResult.OK)
             {
-                RutaArchivoOrigen = openFileDialog.FileName;
-                NombreArchivoOrigen = Path.GetFileNameWithoutExtension(RutaArchivoOrigen);
-                RutaArchivoDestino = Path.GetDirectoryName(RutaArchivoOrigen);
-                txtcarpetadestino.Text = RutaArchivoDestino;
-                txtcarpetaorigen.Text = RutaArchivoOrigen.ToString();
-                convertir = true;
+                _fileOriginPath = openFileDialog.FileName;
+                _fileOriginName = Path.GetFileNameWithoutExtension(_fileOriginPath);
+                _fileDestinationPath = Path.GetDirectoryName(_fileOriginPath);
+                destionationFolderTextBox.Text = _fileDestinationPath;
+                originFolderTextBox.Text = _fileOriginPath.ToString();
+                _convert = true;
             }
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void BtnSaveClick(object sender, EventArgs e)
         {
-            CarpetaSalida = new FolderBrowserDialog();
-            if (CarpetaSalida.ShowDialog() == DialogResult.OK)
+            _destinationFolder = new FolderBrowserDialog();
+            if (_destinationFolder.ShowDialog() == DialogResult.OK)
             {
-                txtcarpetadestino.Text = CarpetaSalida.SelectedPath;
-                RutaArchivoDestino = txtcarpetadestino.Text;
-                convertir = true;
+                destionationFolderTextBox.Text = _destinationFolder.SelectedPath;
+                _fileDestinationPath = destionationFolderTextBox.Text;
+                _convert = true;
             }
         }
 
-        private void btnConvert_Click(object sender, EventArgs e)
+        private void BtnConvertClick(object sender, EventArgs e)
         {
-            if (convertir)
+            if (_convert)
             {
                 PdfFocus pdfFocus = new PdfFocus();
-                pdfFocus.OpenPdf(RutaArchivoOrigen);
-                pdfFocus.ToWord(RutaArchivoDestino + "\\" + NombreArchivoOrigen + ".docx");
-                Process.Start(RutaArchivoDestino);
+                pdfFocus.OpenPdf(_fileOriginPath);
+                pdfFocus.ToWord(_fileDestinationPath + "\\" + _fileOriginName + ".docx");
+                Process.Start(_fileDestinationPath);
                 MessageBox.Show("Archivo Convertido ... ");
             }
         }
 
-        private void btnInf_Click(object sender, EventArgs e)
+        private void BtnInformationClick(object sender, EventArgs e)
         {
             Form2 form = new Form2();
-            form.FormClosed += cerrarinf;
+            form.FormClosed += CloseInformation;
             base.Enabled = false;
             form.Show();
         }
-        public void cerrarinf(object sender, FormClosedEventArgs e)
+
+        private void CloseInformation(object sender, FormClosedEventArgs e)
         {
             base.Enabled = true;
         }
