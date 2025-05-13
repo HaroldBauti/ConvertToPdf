@@ -9,12 +9,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SautinSoft;
+using Infrastructure;
 
 namespace PDFtoWORD
 {
     public partial class Form1 : Form
     {
+        private readonly IPdfToWordServiceBase _pdfToWordService;
+        
         private FolderBrowserDialog _destinationFolder;
 
         private bool _convert = false;
@@ -28,6 +30,7 @@ namespace PDFtoWORD
         public Form1()
         {
             InitializeComponent();
+            _pdfToWordService = new PdfToWordServiceImpl();
         }
 
         private void BtnExitProgram(object sender, EventArgs e)
@@ -72,11 +75,11 @@ namespace PDFtoWORD
         private void BtnConvertClick(object sender, EventArgs e)
         {
             if (!_convert) return;
-            var pdfFocus = new PdfFocus();
-            pdfFocus.OpenPdf(_fileOriginPath);
-            pdfFocus.ToWord(_fileDestinationPath + "\\" + _fileOriginName + ".docx");
-            Process.Start(_fileDestinationPath);
-            MessageBox.Show("Archivo Convertido ... ");
+            var status = _pdfToWordService.Convert(_fileOriginPath, _fileDestinationPath, _fileOriginName);
+            MessageBox.Show(status == ConvertStatus.Success
+                ? "Archivo Convertido ... "
+                : "Personaliza esto en base al status o algo asi"
+            );
         }
 
         private void BtnInformationClick(object sender, EventArgs e)
