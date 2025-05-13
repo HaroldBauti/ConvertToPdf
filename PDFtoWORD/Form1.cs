@@ -45,46 +45,43 @@ namespace PDFtoWORD
 
         private void BtnSearchClick(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
+            var openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Archive PDF(.pdf)|*.pdf";
-            DialogResult dialogResult = openFileDialog.ShowDialog();
-            if (dialogResult == DialogResult.OK)
-            {
-                _fileOriginPath = openFileDialog.FileName;
-                _fileOriginName = Path.GetFileNameWithoutExtension(_fileOriginPath);
-                _fileDestinationPath = Path.GetDirectoryName(_fileOriginPath);
-                destionationFolderTextBox.Text = _fileDestinationPath;
-                originFolderTextBox.Text = _fileOriginPath.ToString();
-                _convert = true;
-            }
+            var dialogResult = openFileDialog.ShowDialog();
+            
+            if (dialogResult != DialogResult.OK) return;
+            
+            _fileOriginPath = openFileDialog.FileName;
+            _fileOriginName = Path.GetFileNameWithoutExtension(_fileOriginPath);
+            _fileDestinationPath = Path.GetDirectoryName(_fileOriginPath);
+            
+            destionationFolderTextBox.Text = _fileDestinationPath;
+            originFolderTextBox.Text = _fileOriginPath?.ToString();
+            _convert = true;
         }
 
         private void BtnSaveClick(object sender, EventArgs e)
         {
             _destinationFolder = new FolderBrowserDialog();
-            if (_destinationFolder.ShowDialog() == DialogResult.OK)
-            {
-                destionationFolderTextBox.Text = _destinationFolder.SelectedPath;
-                _fileDestinationPath = destionationFolderTextBox.Text;
-                _convert = true;
-            }
+            if (_destinationFolder.ShowDialog() != DialogResult.OK) return;
+            destionationFolderTextBox.Text = _destinationFolder.SelectedPath;
+            _fileDestinationPath = destionationFolderTextBox.Text;
+            _convert = true;
         }
 
         private void BtnConvertClick(object sender, EventArgs e)
         {
-            if (_convert)
-            {
-                PdfFocus pdfFocus = new PdfFocus();
-                pdfFocus.OpenPdf(_fileOriginPath);
-                pdfFocus.ToWord(_fileDestinationPath + "\\" + _fileOriginName + ".docx");
-                Process.Start(_fileDestinationPath);
-                MessageBox.Show("Archivo Convertido ... ");
-            }
+            if (!_convert) return;
+            var pdfFocus = new PdfFocus();
+            pdfFocus.OpenPdf(_fileOriginPath);
+            pdfFocus.ToWord(_fileDestinationPath + "\\" + _fileOriginName + ".docx");
+            Process.Start(_fileDestinationPath);
+            MessageBox.Show("Archivo Convertido ... ");
         }
 
         private void BtnInformationClick(object sender, EventArgs e)
         {
-            Form2 form = new Form2();
+            var form = new Form2();
             form.FormClosed += CloseInformation;
             base.Enabled = false;
             form.Show();
