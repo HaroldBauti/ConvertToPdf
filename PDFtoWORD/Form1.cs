@@ -11,7 +11,7 @@ namespace PDFtoWORD
         
         private FolderBrowserDialog _destinationFolder;
 
-        private bool _convert = false;
+        private bool _convert;
 
         private string _fileOriginPath;
 
@@ -32,9 +32,9 @@ namespace PDFtoWORD
 
         private void BtnMinimizeWindow(object sender, EventArgs e)
         {
-            if (this.WindowState == FormWindowState.Normal)
+            if (WindowState == FormWindowState.Normal)
             {
-                this.WindowState = FormWindowState.Minimized;
+                WindowState = FormWindowState.Minimized;
             }
         }
 
@@ -78,13 +78,13 @@ namespace PDFtoWORD
         {
             var form = new Form2();
             form.FormClosed += CloseInformation;
-            base.Enabled = false;
+            Enabled = false;
             form.Show();
         }
 
         private void CloseInformation(object sender, FormClosedEventArgs e)
         {
-            base.Enabled = true;
+            Enabled = true;
         }
     }
     
