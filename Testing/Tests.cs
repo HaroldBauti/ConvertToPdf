@@ -1,3 +1,5 @@
+using System.IO;
+using Infrastructure;
 using Xunit;
 
 namespace Testing
@@ -5,9 +7,16 @@ namespace Testing
     public class Tests
     {
         [Fact]
-        public void Test1()
+        public void PdfToWordConverterTest()
         {
-            Assert.True(true);
+            //* No logre que corriera en linux xd
+            IPdfToWordServiceBase converterService = new PdfToWordServiceImpl();
+            var currentDirectory = Directory.GetCurrentDirectory();
+            var tempDirectory = Path.Combine(currentDirectory, "TestFiles");
+            Directory.CreateDirectory(tempDirectory);
+
+            var status = converterService.Convert(Path.Combine(currentDirectory, "random-document.pdf"), tempDirectory, "output");
+            Assert.Equal(status, ConvertStatus.Success);
         }
     }
 }
