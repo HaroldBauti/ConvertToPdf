@@ -34,11 +34,11 @@
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.btnInf = new FontAwesome.Sharp.IconButton();
-            this.txtcarpetadestino = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.destionationFolderTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtcarpetaorigen = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.originFolderTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnSave = new FontAwesome.Sharp.IconButton();
             this.btnSearch = new FontAwesome.Sharp.IconButton();
@@ -80,7 +80,7 @@
             this.iconButton3.Size = new System.Drawing.Size(42, 34);
             this.iconButton3.TabIndex = 26;
             this.iconButton3.UseVisualStyleBackColor = true;
-            this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click);
+            this.iconButton3.Click += new System.EventHandler(this.BtnExitProgram);
             // 
             // iconButton2
             // 
@@ -95,7 +95,7 @@
             this.iconButton2.Size = new System.Drawing.Size(37, 34);
             this.iconButton2.TabIndex = 24;
             this.iconButton2.UseVisualStyleBackColor = true;
-            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
+            this.iconButton2.Click += new System.EventHandler(this.BtnMinimizeWindow);
             // 
             // btnInf
             // 
@@ -110,27 +110,27 @@
             this.btnInf.Size = new System.Drawing.Size(37, 34);
             this.btnInf.TabIndex = 19;
             this.btnInf.UseVisualStyleBackColor = true;
-            this.btnInf.Click += new System.EventHandler(this.btnInf_Click);
+            this.btnInf.Click += new System.EventHandler(this.BtnInformationClick);
             // 
             // txtcarpetadestino
             // 
-            this.txtcarpetadestino.BackColor = System.Drawing.Color.White;
-            this.txtcarpetadestino.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtcarpetadestino.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtcarpetadestino.ForeColor = System.Drawing.Color.Black;
-            this.txtcarpetadestino.HintForeColor = System.Drawing.Color.Empty;
-            this.txtcarpetadestino.HintText = "";
-            this.txtcarpetadestino.isPassword = false;
-            this.txtcarpetadestino.LineFocusedColor = System.Drawing.Color.Blue;
-            this.txtcarpetadestino.LineIdleColor = System.Drawing.Color.Gray;
-            this.txtcarpetadestino.LineMouseHoverColor = System.Drawing.Color.Blue;
-            this.txtcarpetadestino.LineThickness = 3;
-            this.txtcarpetadestino.Location = new System.Drawing.Point(253, 204);
-            this.txtcarpetadestino.Margin = new System.Windows.Forms.Padding(4);
-            this.txtcarpetadestino.Name = "txtcarpetadestino";
-            this.txtcarpetadestino.Size = new System.Drawing.Size(379, 33);
-            this.txtcarpetadestino.TabIndex = 22;
-            this.txtcarpetadestino.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.destionationFolderTextBox.BackColor = System.Drawing.Color.White;
+            this.destionationFolderTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.destionationFolderTextBox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.destionationFolderTextBox.ForeColor = System.Drawing.Color.Black;
+            this.destionationFolderTextBox.HintForeColor = System.Drawing.Color.Empty;
+            this.destionationFolderTextBox.HintText = "";
+            this.destionationFolderTextBox.isPassword = false;
+            this.destionationFolderTextBox.LineFocusedColor = System.Drawing.Color.Blue;
+            this.destionationFolderTextBox.LineIdleColor = System.Drawing.Color.Gray;
+            this.destionationFolderTextBox.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.destionationFolderTextBox.LineThickness = 3;
+            this.destionationFolderTextBox.Location = new System.Drawing.Point(253, 204);
+            this.destionationFolderTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.destionationFolderTextBox.Name = "destionationFolderTextBox";
+            this.destionationFolderTextBox.Size = new System.Drawing.Size(379, 33);
+            this.destionationFolderTextBox.TabIndex = 22;
+            this.destionationFolderTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label4
             // 
@@ -170,23 +170,23 @@
             // 
             // txtcarpetaorigen
             // 
-            this.txtcarpetaorigen.BackColor = System.Drawing.Color.White;
-            this.txtcarpetaorigen.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtcarpetaorigen.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtcarpetaorigen.ForeColor = System.Drawing.Color.Black;
-            this.txtcarpetaorigen.HintForeColor = System.Drawing.Color.Empty;
-            this.txtcarpetaorigen.HintText = "";
-            this.txtcarpetaorigen.isPassword = false;
-            this.txtcarpetaorigen.LineFocusedColor = System.Drawing.Color.Blue;
-            this.txtcarpetaorigen.LineIdleColor = System.Drawing.Color.Gray;
-            this.txtcarpetaorigen.LineMouseHoverColor = System.Drawing.Color.Blue;
-            this.txtcarpetaorigen.LineThickness = 3;
-            this.txtcarpetaorigen.Location = new System.Drawing.Point(251, 160);
-            this.txtcarpetaorigen.Margin = new System.Windows.Forms.Padding(4);
-            this.txtcarpetaorigen.Name = "txtcarpetaorigen";
-            this.txtcarpetaorigen.Size = new System.Drawing.Size(379, 33);
-            this.txtcarpetaorigen.TabIndex = 21;
-            this.txtcarpetaorigen.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.originFolderTextBox.BackColor = System.Drawing.Color.White;
+            this.originFolderTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.originFolderTextBox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.originFolderTextBox.ForeColor = System.Drawing.Color.Black;
+            this.originFolderTextBox.HintForeColor = System.Drawing.Color.Empty;
+            this.originFolderTextBox.HintText = "";
+            this.originFolderTextBox.isPassword = false;
+            this.originFolderTextBox.LineFocusedColor = System.Drawing.Color.Blue;
+            this.originFolderTextBox.LineIdleColor = System.Drawing.Color.Gray;
+            this.originFolderTextBox.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.originFolderTextBox.LineThickness = 3;
+            this.originFolderTextBox.Location = new System.Drawing.Point(251, 160);
+            this.originFolderTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.originFolderTextBox.Name = "originFolderTextBox";
+            this.originFolderTextBox.Size = new System.Drawing.Size(379, 33);
+            this.originFolderTextBox.TabIndex = 21;
+            this.originFolderTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label7
             // 
@@ -215,7 +215,7 @@
             this.btnSave.Text = "Save";
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnSave.Click += new System.EventHandler(this.BtnSaveClick);
             // 
             // btnSearch
             // 
@@ -235,7 +235,7 @@
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearchClick);
             // 
             // btnConvert
             // 
@@ -253,7 +253,7 @@
             this.btnConvert.TabIndex = 20;
             this.btnConvert.Text = "Convert To Word";
             this.btnConvert.UseVisualStyleBackColor = true;
-            this.btnConvert.Click += new System.EventHandler(this.btnConvert_Click);
+            this.btnConvert.Click += new System.EventHandler(this.BtnConvertClick);
             // 
             // pictureBox2
             // 
@@ -274,14 +274,14 @@
             this.ClientSize = new System.Drawing.Size(828, 345);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.txtcarpetadestino);
+            this.Controls.Add(this.destionationFolderTextBox);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnConvert);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtcarpetaorigen);
+            this.Controls.Add(this.originFolderTextBox);
             this.Controls.Add(this.label7);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
@@ -297,7 +297,7 @@
 
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private FontAwesome.Sharp.IconButton btnSave;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txtcarpetadestino;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox destionationFolderTextBox;
         private FontAwesome.Sharp.IconButton btnSearch;
         private FontAwesome.Sharp.IconButton btnInf;
         private FontAwesome.Sharp.IconButton btnConvert;
@@ -305,7 +305,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txtcarpetaorigen;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox originFolderTextBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel1;
         private FontAwesome.Sharp.IconButton iconButton2;

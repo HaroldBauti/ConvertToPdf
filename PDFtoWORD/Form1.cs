@@ -1,97 +1,90 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using SautinSoft;
+using Infrastructure;
 
 namespace PDFtoWORD
 {
     public partial class Form1 : Form
     {
-        private FolderBrowserDialog CarpetaSalida;
+        private readonly IPdfToWordServiceBase _pdfToWordService;
+        
+        private FolderBrowserDialog _destinationFolder;
 
-        private bool convertir = false;
+        private bool _convert;
 
-        private string RutaArchivoOrigen;
+        private string _fileOriginPath;
 
-        private string NombreArchivoOrigen;
+        private string _fileOriginName;
 
-        private string RutaArchivoDestino;
+        private string _fileDestinationPath;
 
         public Form1()
         {
             InitializeComponent();
+            _pdfToWordService = new PdfToWordServiceImpl();
         }
 
-        private void iconButton3_Click(object sender, EventArgs e)
+        private void BtnExitProgram(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void iconButton2_Click(object sender, EventArgs e)
+        private void BtnMinimizeWindow(object sender, EventArgs e)
         {
-            if (this.WindowState==FormWindowState.Normal)
+            if (WindowState == FormWindowState.Normal)
             {
-                this.WindowState = FormWindowState.Minimized;
+                WindowState = FormWindowState.Minimized;
             }
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void BtnSearchClick(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Archivo PDF(.pdf)|*.pdf";
-            DialogResult dialogResult = openFileDialog.ShowDialog();
-            if (dialogResult == DialogResult.OK)
-            {
-                RutaArchivoOrigen = openFileDialog.FileName;
-                NombreArchivoOrigen = Path.GetFileNameWithoutExtension(RutaArchivoOrigen);
-                RutaArchivoDestino = Path.GetDirectoryName(RutaArchivoOrigen);
-                txtcarpetadestino.Text = RutaArchivoDestino;
-                txtcarpetaorigen.Text = RutaArchivoOrigen.ToString();
-                convertir = true;
-            }
+            var openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Archive PDF(.pdf)|*.pdf";
+            var dialogResult = openFileDialog.ShowDialog();
+            
+            if (dialogResult != DialogResult.OK) return;
+            
+            _fileOriginPath = openFileDialog.FileName;
+            _fileOriginName = Path.GetFileNameWithoutExtension(_fileOriginPath);
+            _fileDestinationPath = Path.GetDirectoryName(_fileOriginPath);
+            
+            destionationFolderTextBox.Text = _fileDestinationPath;
+            originFolderTextBox.Text = _fileOriginPath?.ToString();
+            _convert = true;
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void BtnSaveClick(object sender, EventArgs e)
         {
-            CarpetaSalida = new FolderBrowserDialog();
-            if (CarpetaSalida.ShowDialog() == DialogResult.OK)
-            {
-                txtcarpetadestino.Text = CarpetaSalida.SelectedPath;
-                RutaArchivoDestino = txtcarpetadestino.Text;
-                convertir = true;
-            }
+            _destinationFolder = new FolderBrowserDialog();
+            if (_destinationFolder.ShowDialog() != DialogResult.OK) return;
+            destionationFolderTextBox.Text = _destinationFolder.SelectedPath;
+            _fileDestinationPath = destionationFolderTextBox.Text;
+            _convert = true;
         }
 
-        private void btnConvert_Click(object sender, EventArgs e)
+        private void BtnConvertClick(object sender, EventArgs e)
         {
-            if (convertir)
-            {
-                PdfFocus pdfFocus = new PdfFocus();
-                pdfFocus.OpenPdf(RutaArchivoOrigen);
-                pdfFocus.ToWord(RutaArchivoDestino + "\\" + NombreArchivoOrigen + ".docx");
-                Process.Start(RutaArchivoDestino);
-                MessageBox.Show("Archivo Convertido ... ");
-            }
+            if (!_convert) return;
+            var status = _pdfToWordService.Convert(_fileOriginPath, _fileDestinationPath, _fileOriginName);
+            MessageBox.Show(status == ConvertStatus.Success
+                ? "Archivo Convertido ... "
+                : "Personaliza esto en base al status o algo asi"
+            );
         }
 
-        private void btnInf_Click(object sender, EventArgs e)
+        private void BtnInformationClick(object sender, EventArgs e)
         {
-            Form2 form = new Form2();
-            form.FormClosed += cerrarinf;
-            base.Enabled = false;
+            var form = new Form2();
+            form.FormClosed += CloseInformation;
+            Enabled = false;
             form.Show();
         }
-        public void cerrarinf(object sender, FormClosedEventArgs e)
+
+        private void CloseInformation(object sender, FormClosedEventArgs e)
         {
-            base.Enabled = true;
+            Enabled = true;
         }
     }
     
