@@ -3,28 +3,24 @@
   "WorkspaceRootPath": "E:\\programas\\PDFtoWORD\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{90670388-C288-4C63-89B6-5C83376BABE0}|PDFtoWORD\\PDFtoWORD.csproj|e:\\programas\\pdftoword\\pdftoword\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{90670388-C288-4C63-89B6-5C83376BABE0}|PDFtoWORD\\PDFtoWORD.csproj|solutionrelative:pdftoword\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{2FC6621C-76B3-4C4D-967F-0FD8638B2C27}|Infrastructure\\Infrastructure.csproj|e:\\programas\\pdftoword\\infrastructure\\dataexcel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FC6621C-76B3-4C4D-967F-0FD8638B2C27}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\dataexcel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{90670388-C288-4C63-89B6-5C83376BABE0}|PDFtoWORD\\PDFtoWORD.csproj|e:\\programas\\pdftoword\\pdftoword\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{90670388-C288-4C63-89B6-5C83376BABE0}|PDFtoWORD\\PDFtoWORD.csproj|solutionrelative:pdftoword\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{90670388-C288-4C63-89B6-5C83376BABE0}|PDFtoWORD\\PDFtoWORD.csproj|e:\\programas\\pdftoword\\pdftoword\\frmdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{90670388-C288-4C63-89B6-5C83376BABE0}|PDFtoWORD\\PDFtoWORD.csproj|solutionrelative:pdftoword\\frmdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{90670388-C288-4C63-89B6-5C83376BABE0}|PDFtoWORD\\PDFtoWORD.csproj|e:\\programas\\pdftoword\\pdftoword\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{90670388-C288-4C63-89B6-5C83376BABE0}|PDFtoWORD\\PDFtoWORD.csproj|solutionrelative:pdftoword\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{90670388-C288-4C63-89B6-5C83376BABE0}|PDFtoWORD\\PDFtoWORD.csproj|e:\\programas\\pdftoword\\pdftoword\\frmdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{90670388-C288-4C63-89B6-5C83376BABE0}|PDFtoWORD\\PDFtoWORD.csproj|solutionrelative:pdftoword\\frmdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{90670388-C288-4C63-89B6-5C83376BABE0}|PDFtoWORD\\PDFtoWORD.csproj|e:\\programas\\pdftoword\\pdftoword\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{90670388-C288-4C63-89B6-5C83376BABE0}|PDFtoWORD\\PDFtoWORD.csproj|solutionrelative:pdftoword\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{90670388-C288-4C63-89B6-5C83376BABE0}|PDFtoWORD\\PDFtoWORD.csproj|e:\\programas\\pdftoword\\pdftoword\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{90670388-C288-4C63-89B6-5C83376BABE0}|PDFtoWORD\\PDFtoWORD.csproj|solutionrelative:pdftoword\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\programas\\PDFtoWORD\\packages\\SautinSoft.PdfFocus.2025.5.6\\Readme.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:packages\\SautinSoft.PdfFocus.2025.5.6\\Readme.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\programas\\PDFtoWORD\\packages\\SautinSoft.Document.2025.5.6\\Readme.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:packages\\SautinSoft.Document.2025.5.6\\Readme.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{2FC6621C-76B3-4C4D-967F-0FD8638B2C27}|Infrastructure\\Infrastructure.csproj|e:\\programas\\pdftoword\\infrastructure\\ipdftowordservicebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FC6621C-76B3-4C4D-967F-0FD8638B2C27}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\ipdftowordservicebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,78 +38,66 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Form1.Designer.cs",
-              "DocumentMoniker": "E:\\programas\\PDFtoWORD\\PDFtoWORD\\Form1.Designer.cs",
-              "RelativeDocumentMoniker": "PDFtoWORD\\Form1.Designer.cs",
-              "ToolTip": "E:\\programas\\PDFtoWORD\\PDFtoWORD\\Form1.Designer.cs",
-              "RelativeToolTip": "PDFtoWORD\\Form1.Designer.cs",
-              "ViewState": "AgIAAOIAAAAAAAAAAAAQwO0AAABKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T23:57:54.218Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Form2.cs [Dise\u00F1o]",
-              "DocumentMoniker": "E:\\programas\\PDFtoWORD\\PDFtoWORD\\Form2.cs",
-              "RelativeDocumentMoniker": "PDFtoWORD\\Form2.cs",
-              "ToolTip": "E:\\programas\\PDFtoWORD\\PDFtoWORD\\Form2.cs [Dise\u00F1o]",
-              "RelativeToolTip": "PDFtoWORD\\Form2.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T23:42:59.363Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Readme.txt",
-              "DocumentMoniker": "E:\\programas\\PDFtoWORD\\packages\\SautinSoft.PdfFocus.2025.5.6\\Readme.txt",
-              "RelativeDocumentMoniker": "packages\\SautinSoft.PdfFocus.2025.5.6\\Readme.txt",
-              "ToolTip": "E:\\programas\\PDFtoWORD\\packages\\SautinSoft.PdfFocus.2025.5.6\\Readme.txt",
-              "RelativeToolTip": "packages\\SautinSoft.PdfFocus.2025.5.6\\Readme.txt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-05-12T22:45:20.725Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Readme.txt",
-              "DocumentMoniker": "E:\\programas\\PDFtoWORD\\packages\\SautinSoft.Document.2025.5.6\\Readme.txt",
-              "RelativeDocumentMoniker": "packages\\SautinSoft.Document.2025.5.6\\Readme.txt",
-              "ToolTip": "E:\\programas\\PDFtoWORD\\packages\\SautinSoft.Document.2025.5.6\\Readme.txt",
-              "RelativeToolTip": "packages\\SautinSoft.Document.2025.5.6\\Readme.txt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-05-12T22:42:25.066Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "E:\\programas\\PDFtoWORD\\PDFtoWORD\\Form1.cs",
-              "RelativeDocumentMoniker": "PDFtoWORD\\Form1.cs",
-              "ToolTip": "E:\\programas\\PDFtoWORD\\PDFtoWORD\\Form1.cs*",
-              "RelativeToolTip": "PDFtoWORD\\Form1.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAJAAAAAAAAAA==",
+              "Title": "IPdfToWordServiceBase.cs",
+              "DocumentMoniker": "E:\\programas\\PDFtoWORD\\Infrastructure\\IPdfToWordServiceBase.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\IPdfToWordServiceBase.cs",
+              "ToolTip": "E:\\programas\\PDFtoWORD\\Infrastructure\\IPdfToWordServiceBase.cs",
+              "RelativeToolTip": "Infrastructure\\IPdfToWordServiceBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T22:40:51.341Z",
+              "WhenOpened": "2025-05-28T19:11:58.196Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Form1.cs [Dise\u00F1o]",
-              "DocumentMoniker": "E:\\programas\\PDFtoWORD\\PDFtoWORD\\Form1.cs",
-              "RelativeDocumentMoniker": "PDFtoWORD\\Form1.cs",
-              "ToolTip": "E:\\programas\\PDFtoWORD\\PDFtoWORD\\Form1.cs [Dise\u00F1o]*",
-              "RelativeToolTip": "PDFtoWORD\\Form1.cs [Dise\u00F1o]*",
+              "Title": "DataExcel.cs",
+              "DocumentMoniker": "E:\\programas\\PDFtoWORD\\Infrastructure\\DataExcel.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\DataExcel.cs",
+              "ToolTip": "E:\\programas\\PDFtoWORD\\Infrastructure\\DataExcel.cs",
+              "RelativeToolTip": "Infrastructure\\DataExcel.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAowA8AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T22:37:35.927Z",
+              "WhenOpened": "2025-05-28T15:49:55.834Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\programas\\PDFtoWORD\\PDFtoWORD\\Program.cs",
+              "RelativeDocumentMoniker": "PDFtoWORD\\Program.cs",
+              "ToolTip": "E:\\programas\\PDFtoWORD\\PDFtoWORD\\Program.cs",
+              "RelativeToolTip": "PDFtoWORD\\Program.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABIAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T15:31:27.28Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FrmDashboard.cs",
+              "DocumentMoniker": "E:\\programas\\PDFtoWORD\\PDFtoWORD\\FrmDashboard.cs",
+              "RelativeDocumentMoniker": "PDFtoWORD\\FrmDashboard.cs",
+              "ToolTip": "E:\\programas\\PDFtoWORD\\PDFtoWORD\\FrmDashboard.cs",
+              "RelativeToolTip": "PDFtoWORD\\FrmDashboard.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAAADIAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T15:28:15.361Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FrmDashboard.cs [Dise\u00F1o]",
+              "DocumentMoniker": "E:\\programas\\PDFtoWORD\\PDFtoWORD\\FrmDashboard.cs",
+              "RelativeDocumentMoniker": "PDFtoWORD\\FrmDashboard.cs",
+              "ToolTip": "E:\\programas\\PDFtoWORD\\PDFtoWORD\\FrmDashboard.cs [Dise\u00F1o]",
+              "RelativeToolTip": "PDFtoWORD\\FrmDashboard.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T15:26:45.036Z",
               "EditorCaption": " [Dise\u00F1o]"
             }
           ]

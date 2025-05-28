@@ -8,15 +8,10 @@ namespace PDFtoWORD
     public partial class Form1 : Form
     {
         private readonly IPdfToWordServiceBase _pdfToWordService;
-        
         private FolderBrowserDialog _destinationFolder;
-
         private bool _convert;
-
         private string _fileOriginPath;
-
         private string _fileOriginName;
-
         private string _fileDestinationPath;
 
         public Form1()

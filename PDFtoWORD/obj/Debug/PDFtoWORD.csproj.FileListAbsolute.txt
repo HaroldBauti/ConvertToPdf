@@ -59,3 +59,12 @@ E:\programas\PDFtoWORD\PDFtoWORD\bin\Debug\System.Runtime.CompilerServices.Unsaf
 E:\programas\PDFtoWORD\PDFtoWORD\obj\Debug\PDFtoWORD.csproj.Up2Date
 E:\programas\PDFtoWORD\PDFtoWORD\obj\Debug\PDFtoWORD.exe
 E:\programas\PDFtoWORD\PDFtoWORD\obj\Debug\PDFtoWORD.pdb
+E:\programas\PDFtoWORD\PDFtoWORD\bin\Debug\Infrastructure.dll
+E:\programas\PDFtoWORD\PDFtoWORD\bin\Debug\Infrastructure.pdb
+E:\programas\PDFtoWORD\PDFtoWORD\obj\Debug\PDFtoWORD.FrmDashboard.resources
+E:\programas\PDFtoWORD\PDFtoWORD\bin\Debug\DocumentFormat.OpenXml.dll
+E:\programas\PDFtoWORD\PDFtoWORD\bin\Debug\SpreadsheetLight.dll
+E:\programas\PDFtoWORD\PDFtoWORD\bin\Debug\System.Drawing.Common.dll
+E:\programas\PDFtoWORD\PDFtoWORD\bin\Debug\DocumentFormat.OpenXml.xml
+E:\programas\PDFtoWORD\PDFtoWORD\bin\Debug\SpreadsheetLight.xml
+E:\programas\PDFtoWORD\PDFtoWORD\bin\Debug\System.IO.Packaging.xml
