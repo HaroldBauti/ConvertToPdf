@@ -193,6 +193,10 @@
     <None Include="Resources\HBATEC.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{3eef8743-e3b8-4e59-b25c-e6ace66a073f}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
       <Project>{2fc6621c-76b3-4c4d-967f-0fd8638b2c27}</Project>
       <Name>Infrastructure</Name>

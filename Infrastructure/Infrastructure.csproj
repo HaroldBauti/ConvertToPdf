@@ -99,7 +99,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConvertStatus.cs" />
-    <Compile Include="DataExcel.cs" />
     <Compile Include="IPdfToWordServiceBase.cs" />
     <Compile Include="PdfToWordServiceImpl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
