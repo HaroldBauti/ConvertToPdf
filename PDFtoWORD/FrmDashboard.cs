@@ -1,24 +1,16 @@
 ﻿using Infrastructure;
-using Microsoft.Win32;
 using SpreadsheetLight;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PDFtoWORD
 {
     public partial class FrmDashboard : Form
     {
-
         private string _fileOriginPath; List<ingresosFecha> EQA;
-         List<DataExcel> dataExcels;
+        List<DataExcel> dataExcels;
         public FrmDashboard()
         {
             InitializeComponent();
