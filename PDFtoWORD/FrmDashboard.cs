@@ -1,5 +1,4 @@
 ﻿using Infrastructure;
-using SpreadsheetLight;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,11 +10,13 @@ namespace PDFtoWORD
     public partial class FrmDashboard : Form
     {
         private string _fileOriginPath;
-        List<IngresosFecha> EQA;
-        List<DataExcel> dataExcels;
+        List<IngresosFecha> _eqa;
+        List<DataExcel> _dataExcels;
+        private readonly DiagnosticoMecanicoDataLoader _diagnosticoMecanicoLoader;
         public FrmDashboard()
         {
             InitializeComponent();
+            _diagnosticoMecanicoLoader = new DiagnosticoMecanicoExcelLoader();
         }
 
         private void BtnCargarExcel_Click(object sender, EventArgs e)
@@ -33,92 +34,21 @@ namespace PDFtoWORD
         }
         private void CargarDatos()
         {
-            var document = new SLDocument(_fileOriginPath);
-            var sheetNames = document.GetWorksheetNames();
-            dataExcels = new List<DataExcel>();
-            EQA = new List<IngresosFecha>();
-            int cqq = 0;
-            for (int sheetIndex = 0; sheetIndex < 2; sheetIndex++)
-            {
-                var data = new DataExcel();
-                string hoja = sheetNames[sheetIndex];
-                document.SelectWorksheet(hoja);
+            // dataGridView2.Rows.Add(kvp.Key, kvp.Value);
+            // dataGridView2.Rows[cqq-1].Cells[2].Value = kvp.Value;
 
-                var stats = document.GetWorksheetStatistics();
-                var lastRow = stats.EndRowIndex;
-                int lastCol = stats.EndColumnIndex;
-
-
-                // Variables para cálculos
-                data.Total_Diagnostic = 0;
-                data.Suma_Ganacias = 0;
-                data.sumaPreciosEstimados = 0;
-                data.sumaTiemposDiagnostico = 0;
-
-                for (int row = 2; row <= lastRow; row++)
-                {
-                    data.Total_Diagnostic++;
-
-                    double precioEstimado = 0;
-                    double.TryParse(document.GetCellValueAsString(row, 3), out precioEstimado);
-                    double tiempoDiagnostico = 0;
-                    double.TryParse(document.GetCellValueAsString(row, 4), out tiempoDiagnostico);
-                    IngresosFecha _EQA = new IngresosFecha();
-                    _EQA.Date=DateTime.Parse(document.GetCellValueAsString(row, 6).ToString());
-                    double ganancia = 0;
-                    double.TryParse(document.GetCellValueAsString(row, 7), out ganancia);
-
-                    string tecnico = document.GetCellValueAsString(row, 12);
-
-                    data.sumaPreciosEstimados += precioEstimado;
-                    data.sumaTiemposDiagnostico += tiempoDiagnostico;
-                    data.Suma_Ganacias += ganancia;
-                    if (sheetIndex == 0)
-                    {
-                        _EQA.Scanner = Convert.ToDecimal(ganancia); 
-                    }
-                    else
-                    {
-                        _EQA.WithoutScanner = Convert.ToDecimal(ganancia); 
-                    }
-                    EQA.Add(_EQA);
-                    if (!string.IsNullOrEmpty(tecnico))
-                    {
-                        if (data.gananciaPorTecnico.ContainsKey(tecnico))
-                            data.gananciaPorTecnico[tecnico] += ganancia;
-                        else
-                           data.gananciaPorTecnico[tecnico] = ganancia;
-                    }
-                }
-                foreach (var kvp in data.gananciaPorTecnico)
-                {
-                    if (cqq == 0)
-                    {
-                        dataGridView2.Rows.Add(kvp.Key, kvp.Value);
-
-                    }
-                    else
-                    {
-                        dataGridView2.Rows[cqq-1].Cells[2].Value = kvp.Value;
-                        cqq++;
-                    }
-                }
-                cqq++;
-
-                dataExcels.Add(data);
-                
-
-            }
-            dataGridView1.Rows.Add("Total de Diagnosticos", dataExcels[0].Total_Diagnostic, dataExcels[1].Total_Diagnostic);
-            dataGridView1.Rows.Add("Ganacia Total", $"{dataExcels[0].Suma_Ganacias:F2}", $"{dataExcels[1].Suma_Ganacias:F2}");
-            dataGridView1.Rows.Add("Precio estimado promedio: S/.", $" {(dataExcels[0].Total_Diagnostic > 0 ? dataExcels[0].sumaPreciosEstimados / dataExcels[0].Total_Diagnostic : 0):F2}", $" {(dataExcels[1].Total_Diagnostic > 0 ? dataExcels[1].sumaPreciosEstimados / dataExcels[1].Total_Diagnostic : 0):F2}");
-            dataGridView1.Rows.Add("Tiempo diagnóstico promedio.", $"{(dataExcels[0].Total_Diagnostic > 0 ? dataExcels[0].sumaTiemposDiagnostico / dataExcels[0].Total_Diagnostic : 0):F2} minutos", $":{(dataExcels[1].Total_Diagnostic > 0 ? dataExcels[1].sumaTiemposDiagnostico / dataExcels[1].Total_Diagnostic : 0):F2} minutos");
-            ViewData();
-
-        }
-        void ViewData()
-        {
-            var montosPorFecha = EQA
+            (_dataExcels, _eqa) = _diagnosticoMecanicoLoader.CargarDatos(
+                rutaArchivo: _fileOriginPath,
+                onCqqEquals0: kvp => dataGridView2.Rows.Add(kvp.Key, kvp.Value),
+                onCqqDiferent0: (kvp, cqq) => dataGridView2.Rows[cqq-1].Cells[2].Value = kvp.Value
+                );
+            
+            dataGridView1.Rows.Add("Total de Diagnosticos", _dataExcels[0].Total_Diagnostic, _dataExcels[1].Total_Diagnostic);
+            dataGridView1.Rows.Add("Ganacia Total", $"{_dataExcels[0].Suma_Ganacias:F2}", $"{_dataExcels[1].Suma_Ganacias:F2}");
+            dataGridView1.Rows.Add("Precio estimado promedio: S/.", $" {(_dataExcels[0].Total_Diagnostic > 0 ? _dataExcels[0].sumaPreciosEstimados / _dataExcels[0].Total_Diagnostic : 0):F2}", $" {(_dataExcels[1].Total_Diagnostic > 0 ? _dataExcels[1].sumaPreciosEstimados / _dataExcels[1].Total_Diagnostic : 0):F2}");
+            dataGridView1.Rows.Add("Tiempo diagnóstico promedio.", $"{(_dataExcels[0].Total_Diagnostic > 0 ? _dataExcels[0].sumaTiemposDiagnostico / _dataExcels[0].Total_Diagnostic : 0):F2} minutos", $":{(_dataExcels[1].Total_Diagnostic > 0 ? _dataExcels[1].sumaTiemposDiagnostico / _dataExcels[1].Total_Diagnostic : 0):F2} minutos");
+            
+            var montosPorFecha = _eqa
                 .GroupBy(r => new { FechaStr = r.Date.ToString("yyyy-MM-dd")})
                 .Select(g => new
                 {
@@ -126,13 +56,13 @@ namespace PDFtoWORD
                     TotalMonto = g.Sum(r => r.Scanner),
                     TotalMonto2 = g.Sum(r => r.WithoutScanner)
                 }).OrderByDescending(g => g.Fecha);
-
-       
+            
             chart1.Series[0].XValueMember = "Fecha";       // ahora es string
             chart1.Series[0].YValueMembers = "TotalMonto";
             chart1.Series[1].YValueMembers = "TotalMonto2";
             chart1.DataSource = montosPorFecha;
             chart1.DataBind();
+
         }
         private void FrmDashboard_Load(object sender, EventArgs e)
         {

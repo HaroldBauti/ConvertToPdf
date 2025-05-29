@@ -8,6 +8,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0afff13-4deb-43a8-9105-c7a124a007d9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Infrastructure/DiagnosticoMecanicoDataLoader.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infrastructure/DiagnosticoMecanicoExcelLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PDFtoWORD/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PDFtoWORD/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Infrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Infrastructure.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/Infrastructure.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/Infrastructure.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PDFtoWORD/FrmDashboard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PDFtoWORD/FrmDashboard.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,6 +41,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/379e3b498973bc9e411e6936ee52d047dacfb77899908dfef6c73753c27170ce/DllNotFoundException.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/cuatrodominic/RiderProjects/ConvertToPdf/Infrastructure/DataExcel.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/obj/Debug/.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/cuatrodominic/RiderProjects/ConvertToPdf/PDFtoWORD/FrmDashboard.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Testing/obj/Debug/.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -106,7 +112,7 @@
       <workItem from="1748393762663" duration="268000" />
       <workItem from="1748394099298" duration="65000" />
       <workItem from="1748476529398" duration="644000" />
-      <workItem from="1748477215368" duration="521000" />
+      <workItem from="1748477215368" duration="3541000" />
     </task>
     <task id="LOCAL-00001" summary="xunit setup">
       <option name="closed" value="true" />
@@ -212,7 +218,23 @@
       <option name="project" value="LOCAL" />
       <updated>1748477266085</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="name changes">
+      <option name="closed" value="true" />
+      <created>1748477889343</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1748477889343</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Domain layer">
+      <option name="closed" value="true" />
+      <created>1748478046341</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1748478046341</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,7 +265,9 @@
     <MESSAGE value="Writing test about the main functionality of this project" />
     <MESSAGE value="Trying to run in linux (I couldn't)" />
     <MESSAGE value="removing unused usings" />
-    <option name="LAST_COMMIT_MESSAGE" value="removing unused usings" />
+    <MESSAGE value="name changes" />
+    <MESSAGE value="Domain layer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Domain layer" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
