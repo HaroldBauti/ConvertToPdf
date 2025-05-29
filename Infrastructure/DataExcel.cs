@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Infrastructure
 {
-    public struct ingresosFecha
+    public struct IngresosFecha
     {
         public DateTime Date { get; set; }
         public decimal Scanner { get; set; }

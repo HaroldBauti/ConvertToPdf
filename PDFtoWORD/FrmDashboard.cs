@@ -9,7 +9,8 @@ namespace PDFtoWORD
 {
     public partial class FrmDashboard : Form
     {
-        private string _fileOriginPath; List<ingresosFecha> EQA;
+        private string _fileOriginPath;
+        List<IngresosFecha> EQA;
         List<DataExcel> dataExcels;
         public FrmDashboard()
         {
@@ -31,21 +32,19 @@ namespace PDFtoWORD
         }
         private void CargarDatos()
         {
-            SLDocument document = new SLDocument(_fileOriginPath);
+            var document = new SLDocument(_fileOriginPath);
             var sheetNames = document.GetWorksheetNames();
             dataExcels = new List<DataExcel>();
-            EQA = new List<ingresosFecha>();
+            EQA = new List<IngresosFecha>();
             int cqq = 0;
-            DataExcel data;
             for (int sheetIndex = 0; sheetIndex < 2; sheetIndex++)
             {
-
-                data = new DataExcel();
+                var data = new DataExcel();
                 string hoja = sheetNames[sheetIndex];
                 document.SelectWorksheet(hoja);
 
                 var stats = document.GetWorksheetStatistics();
-                int lastRow = stats.EndRowIndex;
+                var lastRow = stats.EndRowIndex;
                 int lastCol = stats.EndColumnIndex;
 
 
@@ -63,7 +62,7 @@ namespace PDFtoWORD
                     double.TryParse(document.GetCellValueAsString(row, 3), out precioEstimado);
                     double tiempoDiagnostico = 0;
                     double.TryParse(document.GetCellValueAsString(row, 4), out tiempoDiagnostico);
-                    ingresosFecha _EQA=new ingresosFecha();
+                    IngresosFecha _EQA = new IngresosFecha();
                     _EQA.Date=DateTime.Parse(document.GetCellValueAsString(row, 6).ToString());
                     double ganancia = 0;
                     double.TryParse(document.GetCellValueAsString(row, 7), out ganancia);
@@ -118,7 +117,6 @@ namespace PDFtoWORD
         }
         void ViewData()
         {
-
             var montosPorFecha = EQA
                 .GroupBy(r => new { FechaStr = r.Date.ToString("yyyy-MM-dd")})
                 .Select(g => new
